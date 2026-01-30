@@ -10,66 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentSlideIndex = 0;
     let isTyping = false;
 
-    // 1. Particle Systems
-    function createFallingHeart() {
-        const heart = document.createElement('div');
-        heart.classList.add('heart');
-        heart.innerHTML = '❤️';
-        heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.fontSize = Math.random() * 20 + 20 + 'px';
-        heart.style.animationDuration = Math.random() * 3 + 2 + 's';
-        heartContainer.appendChild(heart);
-        setTimeout(() => heart.remove(), 5000);
-    }
-    setInterval(createFallingHeart, 600);
+    // 1. Particle Systems - Simplified (removed for elegance)
+    // Removed falling hearts and sparkles for a cleaner aesthetic
 
-    function createSparkle(x, y) {
-        const sparkle = document.createElement('div');
-        sparkle.classList.add('sparkle');
-        sparkle.style.left = (x - 10) + 'px';
-        sparkle.style.top = (y - 10) + 'px';
-        document.body.appendChild(sparkle);
-        setTimeout(() => sparkle.remove(), 1000);
-    }
-
-    window.addEventListener('mousemove', (e) => {
-        if (Math.random() > 0.85) createSparkle(e.clientX, e.clientY);
-    });
-
-    function createBurst(x, y, emoji) {
-        for (let i = 0; i < 12; i++) {
-            const p = document.createElement('div');
-            p.innerText = emoji;
-            p.style.position = 'fixed';
-            p.style.left = x + 'px';
-            p.style.top = y + 'px';
-            p.style.fontSize = '24px';
-            p.style.pointerEvents = 'none';
-            p.style.zIndex = '10000';
-
-            const angle = (Math.PI * 2 / 12) * i;
-            const velocity = 5 + Math.random() * 10;
-            const vx = Math.cos(angle) * velocity;
-            const vy = Math.sin(angle) * velocity;
-
-            burstContainer.appendChild(p);
-
-            let pos = { x, y };
-            const animate = () => {
-                pos.x += vx;
-                pos.y += vy;
-                p.style.left = pos.x + 'px';
-                p.style.top = pos.y + 'px';
-                p.style.opacity = parseFloat(p.style.opacity || 1) - 0.02;
-                if (parseFloat(p.style.opacity) > 0) {
-                    requestAnimationFrame(animate);
-                } else {
-                    p.remove();
-                }
-            };
-            animate();
-        }
-    }
+    // Removed emoji burst effect for a cleaner aesthetic
 
     // 2. Typewriter Logic
     async function typeText(element, text) {
@@ -142,11 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Impact Effect
                 slide.classList.add('shake');
                 setTimeout(() => slide.classList.remove('shake'), 500);
-
-                // Burst emoji based on slide
-                const rect = counter.getBoundingClientRect();
-                const emoji = currentSlideIndex === 1 ? '📱' : (currentSlideIndex === 2 ? '💬' : '🌹');
-                createBurst(rect.left + rect.width / 2, rect.top + rect.height / 2, emoji);
             }
         };
         requestAnimationFrame(update);
@@ -176,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             const actions = slides[0].querySelector('.response-actions') || document.createElement('div');
             actions.classList.add('response-actions', 'show');
-            actions.innerHTML = `<button class="btn-response">Wait, what is this? ❤️</button>`;
+            actions.innerHTML = `<button class="btn-response">Wait, what is this?</button>`;
             slides[0].appendChild(actions);
             actions.querySelector('button').addEventListener('click', () => showSlide(1));
         }, 1500);
@@ -222,16 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
         noBtn.style.top = `${y}px`;
         noBtn.style.zIndex = '999999'; // Ensure it's on top of everything
 
-        // Spawn emoji reaction
-        const emojis = ['🏃‍♂️', '💨', '💅', '🙄', '🤭'];
-        const emoji = emojis[Math.floor(Math.random() * emojis.length)];
-        const el = document.createElement('div');
-        el.className = 'reaction';
-        el.innerText = emoji;
-        el.style.left = x + 'px';
-        el.style.top = y + 'px';
-        document.body.appendChild(el);
-        setTimeout(() => el.remove(), 800);
+        // Removed emoji reactions for cleaner aesthetic
     };
 
     noBtn.addEventListener('mouseover', moveNoButton);

@@ -1,9 +1,9 @@
 :root {
-    --primary-pink: #ff85a1;
-    --dark-pink: #f06292;
-    --soft-white: #fff5f7;
-    --primary-dark: #4a1c2c;
-    --accent-gold: #ffd700;
+    --primary-pink: #d4a5a5;
+    --dark-pink: #b08080;
+    --soft-white: #fafafa;
+    --primary-dark: #2c2c2c;
+    --accent-gold: #c9a961;
 }
 
 * {
