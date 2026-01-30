@@ -132,7 +132,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const eased = progress * (2 - progress);
             current = Math.floor(eased * target);
 
-            counter.innerText = current + (progress === 1 ? '+' : '');
+            // Only add '+' if it's not the dates slide (index 3)
+            const suffix = (progress === 1 && currentSlideIndex !== 3) ? '+' : '';
+            counter.innerText = current + suffix;
 
             if (progress < 1) {
                 requestAnimationFrame(update);
