@@ -18,9 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Typewriter Logic
     async function typeText(element, text) {
         isTyping = true;
-        element.innerText = '';
+        element.textContent = '';
         for (const char of text) {
-            element.innerText += char;
+            // If char is a space, add it directly, otherwise proceed normal typing
+            element.textContent += char;
             await new Promise(r => setTimeout(r, 40 + Math.random() * 40));
         }
         isTyping = false;

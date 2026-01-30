@@ -18,7 +18,8 @@ body {
     color: var(--primary-dark);
     overflow: hidden;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
+    overflow-x: hidden;
     touch-action: manipulation;
 }
 
@@ -112,9 +113,18 @@ body {
 .slide-content {
     width: 100%;
     max-width: 500px;
+    /* Ensure content doesn't touch edges on small screens */
+    padding: 0 20px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* Ensure images don't overflow */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Envelope */
