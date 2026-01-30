@@ -133,9 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.stopPropagation();
         showSlide(5);
 
-        // Unmute and Play (User interaction allows this)
-        rewardVideo.muted = false;
-        rewardVideo.volume = 1.0;
+        // Play video (muted)
         rewardVideo.play();
 
         triggerConfetti();
