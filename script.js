@@ -203,11 +203,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Evasive No Button
     const moveNoButton = () => {
+        // Essential fix: Move button to body so 'fixed' positioning is relative to viewport,
+        // ignoring any transformed parents that would shift the coordinates.
+        if (noBtn.parentElement !== document.body) {
+            document.body.appendChild(noBtn);
+        }
+
         const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 40) + 20;
         const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 40) + 20;
         noBtn.style.position = 'fixed';
         noBtn.style.left = `${x}px`;
         noBtn.style.top = `${y}px`;
+        noBtn.style.zIndex = '999999'; // Ensure it's on top of everything
 
         // Spawn emoji reaction
         const emojis = ['🏃‍♂️', '💨', '💅', '🙄', '🤭'];
