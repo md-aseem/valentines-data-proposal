@@ -155,6 +155,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function showSlide(index) {
         if (index >= slides.length) return;
 
+        // Essential Fix: Hide the evasive 'No' button when moving to the reward slide
+        // since it might have been moved to document.body and won't be hidden by slide transitions.
+        if (index === 5 && noBtn) {
+            noBtn.style.display = 'none';
+        }
+
         slides.forEach((s, i) => {
             s.classList.toggle('active', i === index);
         });
