@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Message for Carla 💖</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&family=Playfair+Display:ital,wght@0,700;1,700&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="slideshow-container" id="slideshow">
+
+        <!-- Background Hearts (Particle Layer) -->
+        <div class="hearts-container" id="hearts-particles"></div>
+
+        <!-- Slide 1: The Invitation Letter -->
+        <section class="slide active" id="slide-1">
+            <div class="envelope-wrapper">
+                <div class="envelope" id="envelope">
+                    <div class="flap"></div>
+                    <div class="pocket"></div>
+                    <div class="letter">
+                        <div class="letter-text">
+                            <p>Hi Carla,</p>
+                            <p>I have something important to ask you...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-nav-hint">Tap the envelope to open 💌</div>
+        </section>
+
+        <!-- Slide 2: Our Journey (Count-up) -->
+        <section class="slide" id="slide-2">
+            <div class="slide-content">
+                <h1 class="slide-title">Our Little World</h1>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <span class="count" data-target="100">0</span>
+                        <span class="label">Hours of FaceTime 📱</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="count" data-target="2500">0</span>
+                        <span class="label">Messages Together 💬</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="count" data-target="5">0</span>
+                        <span class="label">Perfect Dates 🌹</span>
+                    </div>
+                </div>
+                <div class="photo-moments">
+                    <img src="data/WhatsApp Image 2026-01-29 at 22.12.15 (1).jpeg" alt="Us" class="floating-photo">
+                </div>
+                <p class="memory-caption">"Every second has been my favorite."</p>
+            </div>
+            <div class="slide-nav">Tap to continue →</div>
+        </section>
+
+        <!-- Slide 3: The Big Ask -->
+        <section class="slide" id="slide-3">
+            <div class="slide-content final-ask">
+                <div class="ask-photo">
+                    <img src="data/WhatsApp Image 2026-01-29 at 22.12.14.jpeg" alt="Proposal Image">
+                </div>
+                <h1 class="ask-title">Carla, will you be my Valentine?</h1>
+                <p class="reward-hint">A Princess Shopping Spree is waiting for you... ✨</p>
+                <div class="button-group">
+                    <button id="yes-btn" class="btn-yes">YES! ❤️</button>
+                    <button id="no-btn" class="btn-no">No 😢</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reward Slide (Hidden until Yes) -->
+        <section class="slide" id="slide-reward">
+            <div class="video-container">
+                <video loop muted playsinline id="reward-video">
+                    <source src="data/WhatsApp Video 2026-01-29 at 22.12.16.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="reward-overlay">
+                <h1 class="reward-title">YAY! SEE YOU FEB 14TH!</h1>
+                <div class="reward-card glass">
+                    <p><strong>Agenda:</strong> Princess Shopping Spree</p>
+                    <p><strong>Status:</strong> Confirmed & Excited</p>
+                </div>
+                <p class="reward-footer">Can't wait to see that smile. ❤️</p>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
