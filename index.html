@@ -13,11 +13,12 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body class="conversational-mode">
     <div class="slideshow-container" id="slideshow">
 
-        <!-- Background Hearts (Particle Layer) -->
+        <!-- Background Particle Layer -->
         <div class="hearts-container" id="hearts-particles"></div>
+        <div class="burst-container" id="burst-overlay"></div>
 
         <!-- Slide 1: The Invitation Letter -->
         <section class="slide active" id="slide-1">
@@ -33,64 +34,114 @@
                     </div>
                 </div>
             </div>
-            <div class="slide-nav-hint">Tap the envelope to open 💌</div>
+            <div class="narrative-box">
+                <h2 class="typewriter" data-text="Open this for a surprise... 💌"></h2>
+                <div class="nav-hint">Tap the envelope</div>
+            </div>
         </section>
 
-        <!-- Slide 2: Our Journey (Count-up) -->
+        <!-- Slide 2: FaceTime Stats -->
         <section class="slide" id="slide-2">
             <div class="slide-content">
-                <h1 class="slide-title">Our Little World</h1>
-                <div class="metrics-grid">
-                    <div class="metric-item">
-                        <span class="count" data-target="100">0</span>
-                        <span class="label">Hours of FaceTime 📱</span>
-                    </div>
-                    <div class="metric-item">
-                        <span class="count" data-target="2500">0</span>
-                        <span class="label">Messages Together 💬</span>
-                    </div>
-                    <div class="metric-item">
-                        <span class="count" data-target="5">0</span>
-                        <span class="label">Perfect Dates 🌹</span>
-                    </div>
+                <div class="narrative-box">
+                    <h1 class="typewriter" data-text="Wait, do you remember our long nights?"></h1>
                 </div>
-                <div class="photo-moments">
+                <div class="single-metric glass reveal-item">
+                    <span class="count" data-target="100">0</span>
+                    <span class="label">Hours of FaceTime+ 📱</span>
+                </div>
+                <div class="photo-moments reveal-item">
                     <img src="data/WhatsApp Image 2026-01-29 at 22.12.15 (1).jpeg" alt="Us" class="floating-photo">
                 </div>
-                <p class="memory-caption">"Every second has been my favorite."</p>
+                <div class="response-actions">
+                    <button class="btn-response" data-next="true">That's a lot of talking... 🤭</button>
+                </div>
             </div>
-            <div class="slide-nav">Tap to continue →</div>
         </section>
 
-        <!-- Slide 3: The Big Ask -->
+        <!-- Slide 3: Messages Stats -->
         <section class="slide" id="slide-3">
+            <div class="slide-content">
+                <div class="narrative-box">
+                    <h1 class="typewriter" data-text="And all the things we've said..."></h1>
+                </div>
+                <div class="single-metric glass reveal-item">
+                    <span class="count" data-target="2500">0</span>
+                    <span class="label">Messages Together+ 💬</span>
+                </div>
+                <div class="photo-moments reveal-item">
+                    <img src="data/WhatsApp Image 2026-01-29 at 22.12.15 (2).jpeg" alt="Us" class="floating-photo">
+                </div>
+                <div class="response-actions">
+                    <button class="btn-response" data-next="true">Wait, there's more? 💬</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Dates Stats -->
+        <section class="slide" id="slide-4">
+            <div class="slide-content">
+                <div class="narrative-box">
+                    <h1 class="typewriter" data-text="Every single date has been perfect."></h1>
+                </div>
+                <div class="single-metric glass reveal-item">
+                    <span class="count" data-target="5">0</span>
+                    <span class="label">Perfect Dates+ 🌹</span>
+                </div>
+                <div class="photo-moments reveal-item">
+                    <img src="data/WhatsApp Image 2026-01-29 at 22.12.15.jpeg" alt="Us" class="floating-photo">
+                </div>
+                <div class="response-actions">
+                    <button class="btn-response" data-next="true">Actually... one more thing. 🌹</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: The Big Ask -->
+        <section class="slide" id="slide-5">
             <div class="slide-content final-ask">
-                <div class="ask-photo">
+                <div class="narrative-box">
+                    <h1 class="typewriter" data-text="Carla, you make every day special."></h1>
+                </div>
+                <div class="ask-photo reveal-item">
                     <img src="data/WhatsApp Image 2026-01-29 at 22.12.14.jpeg" alt="Proposal Image">
                 </div>
-                <h1 class="ask-title">Carla, will you be my Valentine?</h1>
-                <p class="reward-hint">A Princess Shopping Spree is waiting for you... ✨</p>
-                <div class="button-group">
+                <h1 class="ask-title reveal-item">Will you be my Valentine?</h1>
+                <p class="reward-hint reveal-item">I have something special planned... ✨</p>
+                <div class="button-group reveal-item">
                     <button id="yes-btn" class="btn-yes">YES! ❤️</button>
                     <button id="no-btn" class="btn-no">No 😢</button>
                 </div>
             </div>
         </section>
 
-        <!-- Reward Slide (Hidden until Yes) -->
+        <!-- Reward Slide: Romantic Dinner Reveal -->
         <section class="slide" id="slide-reward">
             <div class="video-container">
-                <video loop muted playsinline id="reward-video">
+                <video loop playsinline id="reward-video">
                     <source src="data/WhatsApp Video 2026-01-29 at 22.12.16.mp4" type="video/mp4">
                 </video>
             </div>
-            <div class="reward-overlay">
-                <h1 class="reward-title">YAY! SEE YOU FEB 14TH!</h1>
-                <div class="reward-card glass">
-                    <p><strong>Agenda:</strong> Princess Shopping Spree</p>
-                    <p><strong>Status:</strong> Confirmed & Excited</p>
+            <div class="reward-overlay glass">
+                <div class="invitation-card">
+                    <h1 class="invitation-title">It's a Date! 🥂</h1>
+                    <div class="divider"></div>
+                    <p class="invitation-subtitle">Valentine's Dinner Celebration</p>
+
+                    <div class="reservation-details">
+                        <div class="detail-item">
+                            <span class="detail-label">WHERE</span>
+                            <span class="detail-value">Pisco y Nazca</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">WHEN</span>
+                            <span class="detail-value">Feb 14th • 9:00 PM</span>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+                    <p class="invitation-footer">I can't wait to celebrate with you, Carla. ❤️</p>
                 </div>
-                <p class="reward-footer">Can't wait to see that smile. ❤️</p>
             </div>
         </section>
 
